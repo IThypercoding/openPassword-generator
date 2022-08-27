@@ -3,6 +3,8 @@ from math import nan
 import random
 
 password = "If you see this text, this is a bug. Report it in the issues"
+lenght_pass = 1
+lenght_pass_raw = "2"
 lower_case = "abcdefghijklmnopqrstuvwxyz"
 upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 numbers = "0123456789"
@@ -18,7 +20,7 @@ layout1 = [  [sg.Text('Password lenght...')],
             [sg.Text('This password can have:')],
             [sg.Checkbox('numbers', key="-NU-")],
             [sg.Checkbox('symbols', key="-SY-")],
-            [sg.Button('Ok'), sg.Button('Cancel')]
+            [sg.Button('Ok')]
             ]
 #layout2 = [[sg.Text('Your password is')],[sg.Text(password)]]
 
@@ -31,6 +33,7 @@ if values["-NU-"] == True:
     Full_string = Full_string + numbers
 if values["-SY-"] == True:
     Full_string = Full_string + symbols
+lenght_pass = int(lenght_pass_raw)
 password = "".join(random.sample(Full_string, lenght_pass))
 layout2 = [[sg.Text('Your password is')],[sg.Text(password)]]
 window1 = sg.Window('Output', layout2, margins=(50, 50))
