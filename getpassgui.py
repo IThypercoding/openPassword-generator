@@ -10,7 +10,7 @@ upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 numbers = "0123456789"
 symbols = "@#$%&*/\?"
 
-sg.theme('DarkAmber')
+sg.theme('DarkTanBlue')
 layout1 = [  [sg.Text('Password lenght...')],
             [sg.Slider(range=(4,12),
          default_value=8,
@@ -20,11 +20,11 @@ layout1 = [  [sg.Text('Password lenght...')],
             [sg.Text('This password can have:')],
             [sg.Checkbox('numbers', key="-NU-", default=True)],
             [sg.Checkbox('symbols', key="-SY-", default=True)],
-            [sg.Button('Ok')]
+            [sg.Button('Ok'), sg.Button('Cancel')]
             ]
 #layout2 = [[sg.Text('Your password is')],[sg.Text(password)]]
 
-window1 = sg.Window('Password maker 1.0', layout1)
+window1 = sg.Window('Password maker v1.2', layout1)
 #----------------------------------------------------------------
 #event, values = window1.read()
 #lenght_pass_raw = values["-LE-"]
